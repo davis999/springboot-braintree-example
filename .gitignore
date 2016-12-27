@@ -82,5 +82,8 @@ hs_err_pid*
 
 # Ignored for gradle-compass plugin
 .sass-cache
-src/main/resources/static/css
+#src/main/resources/static/css
 .gems
+
+# Ignored for application.yaml
+src/main/resources/application.yaml

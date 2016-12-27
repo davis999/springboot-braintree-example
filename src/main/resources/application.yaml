@@ -1,7 +1,0 @@
-server:
-  port: 8089
-
-braintree:
-  merchant_id: "xxxxxxxxxx"
-  public_key:  "xxxxxxxxxx"
-  private_key: "xxxxxxxxxx"
