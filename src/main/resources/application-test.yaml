@@ -1,5 +1,0 @@
-braintree:
-  environment: "sanbox"
-  merchant_id: "XXXXXXXXX"
-  public_key:  "XXXXXXXXX"
-  private_key: "XXXXXXXXX"
