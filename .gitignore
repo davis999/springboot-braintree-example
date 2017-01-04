@@ -85,4 +85,4 @@ hs_err_pid*
 #src/main/resources/static/css
 .gems
 
-src/main/resources/application*.yaml
+# src/main/resources/application*.yaml
