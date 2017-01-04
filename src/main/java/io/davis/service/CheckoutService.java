@@ -27,9 +27,6 @@ public class CheckoutService {
 
   public String getClientToken() {
     String clientToken = gateway.clientToken().generate();
-
-    LOG.debug("get client token : {}", clientToken);
-
     return clientToken;
   }
 
@@ -40,7 +37,6 @@ public class CheckoutService {
         .options()
         .submitForSettlement(true)
         .done();
-
     Result<Transaction> result = gateway.transaction().sale(request);
     return result;
   }

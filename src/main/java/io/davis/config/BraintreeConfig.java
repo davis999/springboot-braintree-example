@@ -1,5 +1,7 @@
 package io.davis.config;
 
+import com.braintreegateway.Environment;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -15,6 +17,8 @@ public class BraintreeConfig {
 
   public static String PRIVATE_KEY;
 
+  public static Environment ENVIRONMENT;
+
   @Value("${braintree.merchant_id}")
   public void setMerchantId(String merchantId) {
     MERCHANT_ID = merchantId;
@@ -28,5 +32,23 @@ public class BraintreeConfig {
   @Value("${braintree.private_key}")
   public void setPrivateKey(String privateKey) {
     PRIVATE_KEY = privateKey;
+  }
+
+  @Value("${braintree.environment}")
+  public void setEnvironment(String environment){
+    switch (environment) {
+      case "sanbox":
+        ENVIRONMENT = Environment.SANDBOX;
+        break;
+      case "production":
+        ENVIRONMENT = Environment.PRODUCTION;
+        break;
+      case "development":
+        ENVIRONMENT = Environment.DEVELOPMENT;
+        break;
+      default:
+        ENVIRONMENT = Environment.SANDBOX;
+        break;
+    }
   }
 }
