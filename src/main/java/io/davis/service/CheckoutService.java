@@ -9,6 +9,7 @@ import io.davis.config.BraintreeFactory;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -23,7 +24,8 @@ public class CheckoutService {
    */
   private static final Logger LOG = LoggerFactory.getLogger(CheckoutService.class);
 
-  private BraintreeGateway gateway = BraintreeFactory.getBraintreeGateway();
+  @Autowired
+  private BraintreeGateway gateway;
 
   public String getClientToken() {
     String clientToken = gateway.clientToken().generate();
