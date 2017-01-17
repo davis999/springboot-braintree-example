@@ -5,8 +5,6 @@ import com.braintreegateway.Result;
 import com.braintreegateway.Transaction;
 import com.braintreegateway.TransactionRequest;
 
-import io.davis.config.BraintreeFactory;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +15,7 @@ import java.math.BigDecimal;
 /**
  * Created by Davis on 16/12/27.
  */
-@Service
+//@Service
 public class CheckoutService {
   /**
    * log.

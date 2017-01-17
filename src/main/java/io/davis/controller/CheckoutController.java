@@ -24,7 +24,7 @@ import java.util.Arrays;
 /**
  * Created by Davis on 16/12/27.
  */
-@Controller
+//@Controller
 public class CheckoutController {
 
   @Autowired

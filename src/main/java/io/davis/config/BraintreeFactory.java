@@ -7,31 +7,39 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import java.util.Map;
-
 /**
  * Created by Davis on 16/12/27.
  */
 @Configuration
 public class BraintreeFactory {
-  @Value("#{environment.BRAINTREE_MERCHANT_ID}")
-  public String MERCHANT_ID;
+  /**
+   * merchant id.
+   */
+  //  @Value("#{environment.BRAINTREE_MERCHANT_ID}")
+  @Value("${braintree.merchant-id}")
+  public transient String merchantId;
 
-  @Value("#{environment.BRAINTREE_PUBLIC_KEY}")
-  public String PUBLIC_KEY;
+  /**
+   * public key.
+   */
+  @Value("${braintree.public-key}")
+  public transient String publicKey;
 
-  @Value("#{environment.BRAINTREE_PRIVATE_KEY}")
-  public String PRIVATE_KEY;
+  /**
+   * private key.
+   */
+  @Value("${braintree.private-key}")
+  public transient String privateKey;
 
-  public Environment ENVIRONMENT;
+  public Environment environment;
 
   @Bean
   public BraintreeGateway getBraintreeGateway() {
     return new BraintreeGateway(
-            ENVIRONMENT,
-            MERCHANT_ID,
-            PUBLIC_KEY,
-            PRIVATE_KEY
+        environment,
+        merchantId,
+        publicKey,
+        privateKey
         );
   }
 
@@ -39,16 +47,16 @@ public class BraintreeFactory {
   public void setEnvironment(String environment) {
     switch (environment) {
       case "sanbox":
-        ENVIRONMENT = Environment.SANDBOX;
+        this.environment = Environment.SANDBOX;
         break;
       case "production":
-        ENVIRONMENT = Environment.PRODUCTION;
+        this.environment = Environment.PRODUCTION;
         break;
       case "development":
-        ENVIRONMENT = Environment.DEVELOPMENT;
+        this.environment = Environment.DEVELOPMENT;
         break;
       default:
-        ENVIRONMENT = Environment.SANDBOX;
+        this.environment = Environment.SANDBOX;
         break;
     }
   }
