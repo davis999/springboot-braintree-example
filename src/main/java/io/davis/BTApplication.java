@@ -11,7 +11,6 @@ import com.braintreegateway.MerchantAccount;
 import com.braintreegateway.MerchantAccountRequest;
 import com.braintreegateway.PaymentMethodNonce;
 import com.braintreegateway.Result;
-import com.sun.xml.internal.bind.v2.runtime.output.SAXOutput;
 
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,12 +21,12 @@ import java.util.List;
  */
 public class BTApplication {
 
-  private static BraintreeGateway gateway = new BraintreeGateway(
-      Environment.SANDBOX,
-      "zd4ykzzngrhgnbdv",
-      "j55k9vx4y7kp48yw",
-      "e993538bfa75c350dac4f3c95b377e26"
-  );
+//  private static BraintreeGateway gateway = new BraintreeGateway(
+//      Environment.SANDBOX,
+//      "zd4ykzzngrhgnbdv",
+//      "j55k9vx4y7kp48yw",
+//      "e993538bfa75c350dac4f3c95b377e26"
+//  );
 
 //  private static Customer getCustomer(String customerId) {
 //    Customer customer = gateway.customer().find(customerId);
@@ -96,26 +95,26 @@ public class BTApplication {
 //    );
 //  }
 
-  private static void addCustomerCreditCart() {
-    CustomerRequest request = new CustomerRequest()
-        .creditCard()
-        .number("4111111111111111")
-        .expirationYear("2019")
-        .expirationMonth("09")
-        .cvv("123")
-        .options()
-        .verifyCard(true)
-        .done()
-        .done();
-
-    Result<Customer> result = gateway.customer().create(request);
-
-    System.out.println(result.getTarget().getId());
-  }
-
-  public static void main(String[] args) {
-    addCustomerCreditCart();
-  }
+//  private static void addCustomerCreditCart() {
+//    CustomerRequest request = new CustomerRequest()
+//        .creditCard()
+//        .number("4111111111111111")
+//        .expirationYear("2019")
+//        .expirationMonth("09")
+//        .cvv("123")
+//        .options()
+//        .verifyCard(true)
+//        .done()
+//        .done();
+//
+//    Result<Customer> result = gateway.customer().create(request);
+//
+//    System.out.println(result.getTarget().getId());
+//  }
+//
+//  public static void main(String[] args) {
+//    addCustomerCreditCart();
+//  }
 
 //
 //  private static void validateCustomerCreditCart() {

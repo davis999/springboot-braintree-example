@@ -2,6 +2,8 @@ package io.davis.application.model.mapper;
 
 import com.braintreegateway.CustomerRequest;
 
+import io.davis.application.model.CreditCart;
+
 /**
  * Created by Davis on 17/2/3.
  */

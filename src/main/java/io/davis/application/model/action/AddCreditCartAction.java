@@ -1,5 +1,7 @@
 package io.davis.application.model.action;
 
+import io.davis.application.model.CreditCart;
+
 import lombok.Getter;
 import lombok.Setter;
 
