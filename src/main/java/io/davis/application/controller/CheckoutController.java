@@ -1,4 +1,4 @@
-package io.davis.controller;
+package io.davis.application.controller;
 
 import com.braintreegateway.CreditCard;
 import com.braintreegateway.Customer;
@@ -6,11 +6,9 @@ import com.braintreegateway.Result;
 import com.braintreegateway.Transaction;
 import com.braintreegateway.ValidationError;
 
-import io.davis.service.CheckoutService;
+import io.davis.domain.service.CheckoutService;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

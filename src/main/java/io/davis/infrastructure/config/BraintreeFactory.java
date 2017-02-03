@@ -1,4 +1,4 @@
-package io.davis.config;
+package io.davis.infrastructure.config;
 
 import com.braintreegateway.BraintreeGateway;
 import com.braintreegateway.Environment;

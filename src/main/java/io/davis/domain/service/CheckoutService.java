@@ -1,4 +1,4 @@
-package io.davis.service;
+package io.davis.domain.service;
 
 import com.braintreegateway.BraintreeGateway;
 import com.braintreegateway.Result;
@@ -8,7 +8,6 @@ import com.braintreegateway.TransactionRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 

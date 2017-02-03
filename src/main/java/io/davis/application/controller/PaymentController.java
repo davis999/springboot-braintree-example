@@ -1,9 +1,9 @@
-package io.davis.controller;
+package io.davis.application.controller;
 
-import com.braintreegateway.CreditCard;
 import com.braintreegateway.Transaction;
 
-import io.davis.service.PaymentService;
+import io.davis.application.model.action.AddCreditCartAction;
+import io.davis.domain.service.PaymentService;
 import io.swagger.annotations.ApiOperation;
 
 import org.slf4j.Logger;
@@ -42,23 +42,21 @@ public class PaymentController {
 
   @ApiOperation("get credit carts by customer id")
   @GetMapping("/credit-cards")
-  public List<CreditCard> getCreditCarts(@RequestParam String customerId) {
+  public List<CreditCart> getCreditCarts(@RequestParam String customerId) {
     LOG.debug("enter getCreditCarts, customer id is : {}", customerId);
-    List<CreditCard> result = paymentService.getCreditCarts(customerId);
+    List<CreditCart> result = paymentService.getCreditCarts(customerId);
     LOG.debug("end getCreditCarts, result size is : {}", result.size());
     return result;
   }
 
   @ApiOperation("update customer credit cart")
-  @PutMapping("/credit-cards")
-  public List<CreditCard> updateCustomerCreditCart(@RequestParam String customerId,
-                                                   @RequestParam String nonce) {
-    LOG.debug("enter updateCustomerCreditCart, customer id is : {}, nonce is : {}", customerId,
-        nonce);
+  @PutMapping("/credit-cart")
+  public List<CreditCart> addCreditCart(AddCreditCartAction addCreditCartAction) {
+    LOG.debug("enter addCreditCart");
 
-    List<CreditCard> result = paymentService.updateCustomer(customerId, nonce);
+    List<CreditCart> result = paymentService.addCreditCart(addCreditCartAction);
 
-    LOG.debug("end updateCustomerCreditCart, result size is : {}", result.size());
+    LOG.debug("end addCreditCart");
 
     return result;
   }
